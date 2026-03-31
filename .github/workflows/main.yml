@@ -1,0 +1,21 @@
+name: First Workflow
+
+on:
+  push:
+   branches: 
+    - main
+
+jobs:
+  job1:
+     runs-on: ubuntu-latest 
+
+     steps:
+       - name: Print a Welcome Message 
+         run: echo " Welcome to our GITHUB Actions workfolw"
+
+       - name: Checkout repository 
+         uses: actions/checkout@v6.0.2
+         
+
+      
+
