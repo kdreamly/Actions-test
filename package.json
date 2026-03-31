@@ -2,8 +2,10 @@
 "version": "1.0.0",
 "main": "src/app.js",
 "license": "MIT",
-"dependencies": {
-        
-    },
+
     "scripts": {
-        "test": "bash test.sh"
+        "test": "bash test.sh" 
+    },
+    "dependencies": {
+       
+    }
