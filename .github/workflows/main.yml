@@ -13,9 +13,10 @@ jobs:
        - name: Print a Welcome Message 
          run: echo " Welcome to our GITHUB Actions workfolw"
 
-       - name: Checkout repository 
-         uses: actions/checkout@v6.0.2
+       # - name: Checkout repository 
+       #   uses: actions/checkout@v6.0.2
          
-
+       - name: Repository List Files 
+         run: ls -la 
       
 
