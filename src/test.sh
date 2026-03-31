@@ -8,10 +8,10 @@ OUTPUT=$(node -e "console.log(require('./src/app')('World'))")
 if [ "$OUTPUT" == "$EXPECTED_OUTPUT" ]; then
   echo "===================="
   echo " ✅ Test passed!" 
-  echo "===================="
+  echo "==================="
   exit 0
 else
-  echo "===================="
+  echo "==================="
   echo " ❌ Test failed! Expected '$EXPECTED_OUTPUT' but got '$OUTPUT'"
   echo "===================="
   exit 1
