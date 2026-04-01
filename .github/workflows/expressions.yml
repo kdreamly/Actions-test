@@ -1,0 +1,23 @@
+on:
+    workflow_dispatch:
+
+jobs:
+  expressions: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a deployment script
+        run: ./deploy.sh
+      - name: Cleanup on failure
+        run: echo "Deployment succeeded"
+        # if: success()
+# always() →> always runs regardless of the previous step result
+# cancelled() →> if the previous step was cancelled
+# failure() →> if the previous step failed
+# success() →> if the previous step succeeded   
+
+        if: ${{failure() && github.event_name == 'push' }}
+        # if: ${{failure() && github.event_name != 'push' }} 
+        # if: ${{failure() && github.event_name == 'pull_request' }}
+
+        
+        

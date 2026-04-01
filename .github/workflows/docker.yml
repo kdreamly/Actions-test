@@ -1,0 +1,31 @@
+on:
+    workflow_dispatch
+
+jobs:
+    hybrid_job:
+     runs-on: ubuntu-latest  
+     steps:
+      - name: Running command in Ubuntu VM
+        run: echo "This command is running in an Ubuntu VM"
+       
+      - name: Run a command in a Docker container
+        uses: docker://alpine:latest
+        with: 
+            entrypoint: /bin/sh 
+            args: |
+              -c "echo 'This command is running inside a Docker container'"
+
+      - name: Run other Command in Ububtu VM
+        run: echo "Back to VM"
+
+    dockerized_job:
+        runs-on: ubuntu-latest
+        container:
+            image: node:14
+        steps:
+             - run: node --version 
+             - run: echo "This command is running inside a Docker container with Node.js"
+
+
+
+
